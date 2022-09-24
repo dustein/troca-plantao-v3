@@ -9,3 +9,6 @@ npx tsc --init
 tsconfig: rootDir (./src), outDir (./build)
 npm i ts-node-dev -D
 novo script "dev": "ts-node-dev ./src/server.ts"
+npm i prisma -D
+npx prisma init --datasource-provider SQlite
+verificar configuração VScode: "[prisma]": { "editor.formatOnSave": true }
