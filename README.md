@@ -19,3 +19,11 @@ npm install @prisma/client
 ... e const prisma = new PrismaClient()
 OBS - o tsnode dev vai parar de funcionar porque a conexao com o BD nbo prisma impede que ele restart sozinho. Adicionar a flag --exit-child no script dev do package.json
 NÃO ESQUECER que as funções que vão fazer acesso ao banco de dados devem ser async await
+
+
+
+
+////
+... projeto React Web:
+Inciando app web com React usando Vite
+npm create vite@latest. Acessar pasta web. npm install. npm run dev. Etc.
