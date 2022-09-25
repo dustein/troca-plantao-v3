@@ -1,10 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
+
+function Form() {
+  return (
+    <>
+      <input type="text" placeholder='Info 1' />
+      <input type="text" placeholder='Info 2' />
+      <button>Enviar</button>
+    </>
+  )
+}
 
 function App() {
   return(
-    <h1>Hello World React!</h1>
+
+    <>
+      <h1>Hello World React!</h1>
+      <Form></Form>
+    </>
   )
 }
 
