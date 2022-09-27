@@ -14,7 +14,7 @@ app.get('/users', async (req, res) => {
 
   const users = await prisma.user.findMany()
 
-  res.send(users)
+  res.status(200).send(users)
 });
 
 //consulta todos os Jobs criados
@@ -22,7 +22,7 @@ app.get('/jobs', async (req, res) => {
 
   const jobs = await prisma.job.findMany();
 
-  res.json(jobs)
+  res.status(200).json(jobs)
 });
 
 //criacao de novo user
@@ -40,6 +40,22 @@ app.post('/users', async (req, res) => {
 
   console.log(newUser)
   res.status(201).json(newUser)
+})
+
+//criacao de novo job
+app.post('/jobs', async (req, res) => {
+  
+  const { data, tipo, userId } = req.body;
+
+  const newJob = await prisma.job.create({
+    data: {
+      data,
+      tipo,
+      userId,
+    }    
+  })
+
+  res.status(201).json(newJob)
 })
 
 
