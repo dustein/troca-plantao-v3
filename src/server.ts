@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client'
 
 const app = express();
 const prisma = new PrismaClient();
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json('Raiz. Typscript ON.')
@@ -24,10 +25,11 @@ app.get('/jobs', async (req, res) => {
   res.json(jobs)
 });
 
+//criacao de novo user
 app.post('/users', async (req, res) => {
 
   const { nome, plantao, funcional } = req.body;
-
+  
   const newUser = await prisma.user.create({
     data: {
       nome,
@@ -37,7 +39,7 @@ app.post('/users', async (req, res) => {
   })
 
   console.log(newUser)
-
+  res.status(201).json(newUser)
 })
 
 
