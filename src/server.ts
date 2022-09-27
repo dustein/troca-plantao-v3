@@ -43,9 +43,11 @@ app.post('/users', async (req, res) => {
 })
 
 //criacao de novo job
+//desenvolver melhor User que posta job
 app.post('/jobs', async (req, res) => {
   
-  const { data, tipo, userId } = req.body;
+  const { data, tipo } = req.body;
+  const userId = req.body;
 
   const newJob = await prisma.job.create({
     data: {
